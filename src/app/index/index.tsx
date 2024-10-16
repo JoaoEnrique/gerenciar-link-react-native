@@ -2,8 +2,7 @@ import { View, Image, TouchableOpacity } from "react-native"
 import { styles } from "./style"
 import { MaterialIcons } from "@expo/vector-icons"
 import { colors } from "@/styles/colors"
-import { Category } from "@/components/category"
-
+import { Categories } from "@/components/categories"
 
 export default function Index(){
     return (
@@ -16,9 +15,8 @@ export default function Index(){
                 </TouchableOpacity>
             </View>
 
-            <Category name="projetos" icon="code"/>
-            <Category name="site" icon="language"/>
-            <Category name="video" icon="movie"/>
+            
+            <Categories/>
         </View>
     )
 }
