@@ -26,9 +26,12 @@ export const styles = StyleSheet.create({
         padding: 24,
         paddingBottom: 100
     },
+    modalOverlay: {
+        flex: 1
+    },
     modal: {
         flex: 1,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
     modalContent: {
         backgroundColor: colors.gray[900],

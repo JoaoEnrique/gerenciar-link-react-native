@@ -54,6 +54,7 @@ export default function Index(){
     async function handleOpen(){
         try {
             await Linking.openURL(linkSelected.url)
+            setShowModal(false)
         } catch (error) {
             Alert.alert("Erro", "Não foi possível abrir link")
             console.log(error);
@@ -67,7 +68,6 @@ export default function Index(){
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                {/* <Image source={require('@/assets/logo.png')} style={styles.logo}/> */}
                 <MaterialIcons name="language" size={30} style={styles.logo} />
 
                 <TouchableOpacity onPress={() => router.navigate('/add')}>
@@ -91,27 +91,30 @@ export default function Index(){
             />
 
             <Modal transparent visible={showModal} animationType="slide">
+            <TouchableOpacity style={styles.modalOverlay} onPress={() => setShowModal(false)}>
                 <View style={styles.modal}>
-                    <View style={styles.modalContent}>
-                        <View style={styles.modalHeader}>
-                            <Text style={styles.modalCategory}>{linkSelected.category}</Text>
+                <View style={styles.modalContent}>
+                    <View style={styles.modalHeader}>
+                    <Text style={styles.modalCategory}>{linkSelected.category}</Text>
 
-                            <TouchableOpacity onPress={() => setShowModal(false)}>
-                                <MaterialIcons size={20} name="close" color={colors.gray[400]} />
-                            </TouchableOpacity>
-                        </View>
+                    <TouchableOpacity onPress={() => setShowModal(false)}>
+                        <MaterialIcons size={20} name="close" color={colors.gray[400]} />
+                    </TouchableOpacity>
+                    </View>
 
-                        <Text style={styles.modalLinkName}>{linkSelected.name}</Text>
+                    <Text style={styles.modalLinkName}>{linkSelected.name}</Text>
 
-                        <Text selectable style={styles.modalUrl}>{linkSelected.url}</Text>
+                    <Text selectable style={styles.modalUrl}>{linkSelected.url}</Text>
 
-                        <View style={styles.modalFooter}>
-                            <Option onPress={handleRemove} name="Excluir" icon="delete" variant="secondary" />
-                            <Option onPress={handleOpen} name="Abrir" icon="language" />
-                        </View>
+                    <View style={styles.modalFooter}>
+                    <Option onPress={handleRemove} name="Excluir" icon="delete" variant="secondary" />
+                    <Option onPress={handleOpen} name="Abrir" icon="language" />
                     </View>
                 </View>
+                </View>
+            </TouchableOpacity>
             </Modal>
+
         </View>
     )
 }
