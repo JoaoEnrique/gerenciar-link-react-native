@@ -59,4 +59,10 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         color: colors.gray[400]
     },
+    modalFooter: {
+        flexDirection: 'row',
+        marginTop: 32,
+        width: '100%',
+        justifyContent: 'space-between',
+    }
 })
