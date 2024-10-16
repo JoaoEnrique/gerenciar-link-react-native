@@ -91,28 +91,29 @@ export default function Index(){
             />
 
             <Modal transparent visible={showModal} animationType="slide">
-            <TouchableOpacity style={styles.modalOverlay} onPress={() => setShowModal(false)}>
                 <View style={styles.modal}>
-                <View style={styles.modalContent}>
-                    <View style={styles.modalHeader}>
-                    <Text style={styles.modalCategory}>{linkSelected.category}</Text>
+                    {/* fechar ao clicar na tela */}
+                    <TouchableOpacity style={styles.modalOverlay} onPress={() => setShowModal(false)}></TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => setShowModal(false)}>
-                        <MaterialIcons size={20} name="close" color={colors.gray[400]} />
-                    </TouchableOpacity>
-                    </View>
+                    <View style={styles.modalContent}>
+                        <View style={styles.modalHeader}>
+                        <Text style={styles.modalCategory}>{linkSelected.category}</Text>
 
-                    <Text style={styles.modalLinkName}>{linkSelected.name}</Text>
+                        <TouchableOpacity onPress={() => setShowModal(false)}>
+                            <MaterialIcons size={20} name="close" color={colors.gray[400]} />
+                        </TouchableOpacity>
+                        </View>
 
-                    <Text selectable style={styles.modalUrl}>{linkSelected.url}</Text>
+                        <Text style={styles.modalLinkName}>{linkSelected.name}</Text>
 
-                    <View style={styles.modalFooter}>
-                    <Option onPress={handleRemove} name="Excluir" icon="delete" variant="secondary" />
-                    <Option onPress={handleOpen} name="Abrir" icon="language" />
+                        <Text selectable style={styles.modalUrl}>{linkSelected.url}</Text>
+
+                        <View style={styles.modalFooter}>
+                        <Option onPress={handleRemove} name="Excluir" icon="delete" variant="secondary" />
+                        <Option onPress={handleOpen} name="Abrir" icon="language" />
+                        </View>
                     </View>
                 </View>
-                </View>
-            </TouchableOpacity>
             </Modal>
 
         </View>
