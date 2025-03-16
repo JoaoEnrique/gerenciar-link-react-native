@@ -6,16 +6,21 @@ export const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 62
     },
+    tinyLogo: {
+        height: 50,
+        width: 50,
+        // marginTop: -30
+    },
     header: {
         paddingHorizontal: 24,
         width: "100%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 32
+        // marginBottom: 32
     },
     logo: {
-        color: colors.green[300]
+        color: colors.green[300],
     },
     links: {
         borderTopWidth: 1,

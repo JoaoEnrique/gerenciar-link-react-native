@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "manage_links",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -17,10 +17,12 @@
     },
     "android": {
       "adaptiveIcon": {
+        "package": "com.joaoalves.managelinks",
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#09090b"
       }
     },
+    "owner": "joaoenrique13",
     "web": {
       "bundler": "metro",
       "output": "static",
